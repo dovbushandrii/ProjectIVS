@@ -1,11 +1,4 @@
-﻿Tento soubor bude obsahovat:
-
--- stanovené termíny,
--- přidělení úkolů na projektu jednotlivým řešitelům,
--- zvolené komunikační kanály pro komunikaci v týmu a stanovená pravidla pro komunikaci (jsou-li nějaká),
--- zvolený systém pro správu verzí a hosting + informaci, jak do repozitáře mohou nahlédnout vyučující/cvičící (viz níže).
-
-Communications:
+﻿Communications:
 ---------------
 
 -- Discord server: IVS Project (Main)
@@ -27,7 +20,7 @@ Deadlines:
 ----------
 
 
-21. 3. 2021:
+21. 3. 2021 (for all of us):
 Install:
 -- MS VS		(src: https://visualstudio.microsoft.com/cs/)
 -- Git 			(src: https://git-scm.com/)
@@ -89,12 +82,21 @@ Finish:
 		Enter Display
 		Result Display
 		ToolBar
-	--Manual testing:
-		Switch numeric system base (2-16) in UI
+	
+17. 4. 2021:
+--Manual testing:
+	switch numeric system base (2-16) in UI
 
 22. 4. 2021:
 Finish:
--- Intaller for Windows 64x
+-- CMake file
+-- Installer for Windows 64x
+-- Deinstaller for Windows 64x
+
+23. 4. 2021 (for all of us):
+--Manual testing:
+	Installer for Windows 64x
+	Deinstaller for Windows 64x
 
 25. 4. 2021:
 Finish:
@@ -102,6 +104,7 @@ Finish:
 
 28. 4. 2021:
 Finish:
+--Doxygen
 --Documentation
 
 
@@ -126,11 +129,15 @@ Personal tasks:
 	30. 4. 2021 Implement:
 		static double Function::mul(double a, double b){}
 		static double Function::root(double a, double(int) b){}
-	4. 4. 2021:
+	4. 4. 2021 Implement:
 		static double Translator::StrWithBaseToNum(string numb, int Base){} 
-	15. 4. 2021:
-		???
-
+	15. 4. 2021 Implement:
+		Enter Display
+		Result Display
+	22. 4. 2021 Create deinstaller:
+		Deinstaller for Windows 64x
+	28. 4. 2021 Finish:
+		Documentation
 
 - xdovbu00 Dovbush Andrii 
 
@@ -141,12 +148,19 @@ Personal tasks:
 	30. 4. 2021 Implement:
 		static double Function::div(double a, double b){}
 		static double Function::pow(double a, double b){}
-	4. 4. 2021:
+	4. 4. 2021 Implement:
 		class Controller{}
 		static double Equation::solveEquation(string equation){}
-	15. 4. 2021:
-		???
-
+	15. 4. 2021 Implement:
+		Keyboard
+	22. 4. 2021 CMake:
+		CMake file
+	28. 4. 2021 Create and finish:
+		Doxygen
+		Documentation
+	29. 4. 2021 Submit:
+		Submit archive
+		
 
 - xhaltm02 Haltmar Adam 
 
@@ -156,10 +170,14 @@ Personal tasks:
 	30. 4. 2021 Implement:
 		static double Function::sub(double a, double b){}
 		static double Function::lg(double a, double(int) b){}
-	4. 4. 2021:
+	4. 4. 2021 Implement:
 		static string Translator::NumToStrWithBase (double numb, int Base){}
-	15. 4. 2021:
-		???
+	15. 4. 2021 Implement:
+		ToolBar
+	22. 4. 2021 Create installer:
+		Installer for Windows 64x
+	28. 4. 2021 Finish:
+		Documentation
 
 - xkolar80 Kolarik Ondrej
 
@@ -170,5 +188,7 @@ Personal tasks:
 	30. 4. 2021 Implement:
 		static double Function::add(double a, double b){}
 		static double Function::ln(double a){}
-	15. 4. 2021:
-		???
+	17. 4. 2021 Finish Manual Testing:
+		Switch numeric system base (2-16) in UI
+	25. 4. 2021 Finish manual:
+		User manual in application
