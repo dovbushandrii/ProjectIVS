@@ -144,7 +144,7 @@ Personal tasks:
 	26. 3. 2021 Gtest:
 		static double Function::div(double a, double b){}
 		static double Function::pow(double a, double b){}
-	static double Translator::StrWithBaseToNum(string numb, int Base){} 
+		static double Translator::StrWithBaseToNum(string numb, int Base){} 
 	30. 4. 2021 Implement:
 		static double Function::div(double a, double b){}
 		static double Function::pow(double a, double b){}
