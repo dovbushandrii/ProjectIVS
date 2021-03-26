@@ -3,6 +3,7 @@
 using namespace std;
 
 class Translator {
+public:
 	//TODO description, function
 	/**
 	*  Converts number in base 0...16 to decimal number

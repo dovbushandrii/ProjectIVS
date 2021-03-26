@@ -4,6 +4,7 @@
 using namespace std;
 
 class Equation {
+public:
 	//TODO description, function
 	/**
 	*  Solves equation 
@@ -16,6 +17,7 @@ class Equation {
 };
 
 class Function {
+public:
 	//TODO description, function
 	/**
 	*  a + b
@@ -25,7 +27,7 @@ class Function {
 	* @param b
 	* @returns
 	*/
-	static double add(double a, double b);
+	static double add(const double a, const double b);
 
 	//TODO description, function
 	/**
@@ -36,7 +38,7 @@ class Function {
 	* @param b
 	* @returns
 	*/
-	static double sub(double a, double b);
+	static double sub(const double a, const double b);
 
 	//TODO description, function
 	/**
@@ -47,7 +49,7 @@ class Function {
 	* @param b
 	* @returns
 	*/
-	static double mul(double a, double b);
+	static double mul(const double a, const double b);
 
 	//TODO description, function
 	/**
@@ -58,7 +60,7 @@ class Function {
 	* @param b
 	* @returns
 	*/
-	static double div(double a, double b);
+	static double div(const double a, const double b);
 
 	//TODO description, function
 	/**
@@ -69,7 +71,7 @@ class Function {
 	* @param b
 	* @returns
 	*/
-	static double pow(double a, double b);
+	static double pow(const double a, const double b);
 
 	//TODO description, function
 	/**
@@ -80,7 +82,7 @@ class Function {
 	* @param b
 	* @returns
 	*/
-	static double root(double a, double b);
+	static double root(const double a, const double b);
 
 	//TODO description, function
 	/**
@@ -90,7 +92,7 @@ class Function {
 	* @param a
 	* @returns
 	*/
-	static double lg(double a);
+	static double lg(const double a);
 
 	//TODO description, function
 	/**
@@ -100,5 +102,5 @@ class Function {
 	* @param a
 	* @returns
 	*/
-	static double ln(double a);
+	static double ln(const double a);
 };
