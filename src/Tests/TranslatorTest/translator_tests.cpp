@@ -43,3 +43,7 @@ TEST_F(TranslatorTest, StrToDouble) {
     //TODO: FRACTION TESTS
     EXPECT_EQ(Translator::StrWithBaseToNum("10.01", 2), 2.25);
 }
+
+/*
+* @Author - Anton Havlovskyi, xhavlo01
+*/
