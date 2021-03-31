@@ -100,3 +100,18 @@ static double Equation::solveEquation(string equation) {
     EXPECT_EQ(Equation::solveEquation("(2+2)*(3+1) - 6^2 + 64^(1/3)*sqrt(25)"), 20);
     EXPECT_ANY_THROW(Equation::solveEquation("(2+2)*(3+1) - 6^2 + 64^(1/3)*sqrt(-25)"), 20);
 }
+/*
+* @Author - Ondřej Kolařík, xkolar80
+*/
+TEST_F(MathlibTwoArgs, Add)
+{
+    EXPECT_EQ(Function::add(4.3, 2.1), 6.4);
+    EXPECT_EQ(Function::add(5, -1), 4);
+    EXPECT_EQ(Function::add(3, 0.25), 3.25);
+    EXPECT_EQ(Function::add(4, -3.5), 0.5);
+    EXPECT_EQ(Function::add(0.5, 1.25), 1.75);
+    EXPECT_EQ(Function::add(6.25, 0.25), 6.5);
+    EXPECT_EQ(Function::add(8, 2), 10);
+    EXPECT_EQ(Function::add(1, 2), 3);
+    EXPECT_EQ(Function::add(3.5, 0.5), 4);
+}
