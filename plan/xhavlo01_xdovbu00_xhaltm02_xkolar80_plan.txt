@@ -46,7 +46,7 @@ Finish:
 		static string Translator::NumToStrWithBase (double numb, int Base){}
 		
 
-30. 4. 2021:
+30. 3. 2021:
 Finish:
 -- Mathlib: +,*,:,/,POW,ROOT,LN:
 	static double Function::add(double a, double b){}
@@ -126,7 +126,7 @@ Personal tasks:
 		static double Function::mul(double a, double b){}
 		static double Function::root(double a, double(int) b){}
 		static double Equation::solveEquation(string equation){}
-	30. 4. 2021 Implement:
+	30. 3. 2021 Implement:
 		static double Function::mul(double a, double b){}
 		static double Function::root(double a, double(int) b){}
 	4. 4. 2021 Implement:
@@ -145,7 +145,7 @@ Personal tasks:
 		static double Function::div(double a, double b){}
 		static double Function::pow(double a, double b){}
 		static double Translator::StrWithBaseToNum(string numb, int Base){} 
-	30. 4. 2021 Implement:
+	30. 3. 2021 Implement:
 		static double Function::div(double a, double b){}
 		static double Function::pow(double a, double b){}
 	4. 4. 2021 Implement:
@@ -167,7 +167,7 @@ Personal tasks:
 	26. 3. 2021 Gtest:
 		static double Function::sub(double a, double b){}
 		static double Function::lg(double a, double(int) b){}
-	30. 4. 2021 Implement:
+	30. 3. 2021 Implement:
 		static double Function::sub(double a, double b){}
 		static double Function::lg(double a, double(int) b){}
 	4. 4. 2021 Implement:
@@ -185,7 +185,7 @@ Personal tasks:
 		static double Function::add(double a, double b){}
 		static double Function::ln(double a){}
 		static string Translator::NumToStrWithBase (double numb, int Base){}
-	30. 4. 2021 Implement:
+	30. 3. 2021 Implement:
 		static double Function::add(double a, double b){}
 		static double Function::ln(double a){}
 	17. 4. 2021 Finish Manual Testing:
