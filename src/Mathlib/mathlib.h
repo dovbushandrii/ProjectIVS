@@ -51,16 +51,16 @@ public:
 	*/
 	static double mul(const double a, const double b);
 
-	//TODO description, function
 	/**
-	*  a / b
-	* @brief
-	* @author
-	* @param a
-	* @param b
-	* @returns
+	* @brief Division function ( a / b )
+	* @author Andrii Dovbush xdovbu00
+	* @param a divided
+	* @param b divider
+	* @returns division a by b
 	*/
-	static double div(const double a, const double b);
+    static double div(const double a, const double b) {
+        return a / b;
+    }
 
 	//TODO description, function
 	/**
