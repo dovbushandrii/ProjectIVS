@@ -36,14 +36,14 @@ public:
     }
 
     /**
-    * @brief
-    * @author
-    * @param a
-    * @param b
-    * @returns
+    * @brief Multiplication function ( a * b )
+    * @author Anton Havlovskyi
+    * @param a - multiplied
+    * @param b - multiplicator
+    * @returns multiplicated a by b
     */
     static double mul(const double a, const double b) {
-        return 0;
+        return a * b;
     }
 
     /**
@@ -71,14 +71,15 @@ public:
     //TODO description, function
     /**
     *  a^(1/b)
-    * @brief
-    * @author
-    * @param a
-    * @param b
-    * @returns
+    * @brief Root function
+    * @author Anton Havlovskyi
+    * @param a rooted
+    * @param b rooter
+    * @returns root from a by b base
     */
     static double root(const double a, const double b) {
-        return 0;
+        double c = 1 / b;
+        return pow(a, c);
     }
 
     /**
