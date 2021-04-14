@@ -166,10 +166,10 @@ Personal tasks:
 
 	26. 3. 2021 Gtest:
 		static double Function::sub(double a, double b){}
-		static double Function::lg(double a, double(int) b){}
+		static double Function::lg(double a){}
 	30. 3. 2021 Implement:
 		static double Function::sub(double a, double b){}
-		static double Function::lg(double a, double(int) b){}
+		static double Function::lg(double a){}
 	4. 4. 2021 Implement:
 		static string Translator::NumToStrWithBase (double numb, int Base){}
 	15. 4. 2021 Implement:
