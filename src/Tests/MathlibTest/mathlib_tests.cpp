@@ -125,3 +125,30 @@ TEST_F(MathlibTwoArgs, Add)
     EXPECT_EQ(Function::add(1, 2), 3);
     EXPECT_EQ(Function::add(3.5, 0.5), 4);
 }
+
+/*
+* @Author - Adam Haltmar, xhaltm02
+*/
+TEST_F(MathlibTwoArgs, Sub)
+{
+    EXPECT_EQ(Function::sub(4, 6), -2);
+    EXPECT_EQ(Function::sub(-8, -3), -5);
+    EXPECT_EQ(Function::sub(-0.1, -0.1), 0);
+    EXPECT_EQ(Function::sub(10.2, 1), 9.2);
+}
+
+/*
+* @Author - Adam Haltmar, xhaltm02
+*/
+TEST_F(MathlibTwoArgs, Log)
+{
+    EXPECT_EQ(Function::lg(4, 1), 0);
+    EXPECT_EQ(Function::lg(3, 81), 4);
+    EXPECT_EQ(Function::lg(81, 3), 0.25);
+    EXPECT_EQ(Function::lg(3.7, 13.69), 2);
+    EXPECT_EQ(Function::lg(0.25, 8), -1.5);
+    
+    EXPECT_ANY_THROW(Function::lg(-5, 10));
+    EXPECT_ANY_THROW(Function::lg(1, 4));
+    EXPECT_ANY_THROW(Function::lg(3, -4));
+}
