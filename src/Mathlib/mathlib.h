@@ -5,15 +5,6 @@
 class Function {
 public:
     /**
-    * Variable to set precision of calculations
-    * in Function::lg and Function::ln
-    * functions.
-    * Should be initialized at the start
-    * of the programm
-    */
-    static double precision;
-
-    /**
     * @brief Sum function ( a + b )
     * @author Andrii Dovbush xdovbu00
     * @param a addend
@@ -89,33 +80,12 @@ public:
     * @returns power
     */
     static double lg(const double a) {
-        double result = -1;
         if (a <= 0) {
             throw std::invalid_argument("mathlib::Function.lg: Argument must be greater then zero");
         }
         else {
-            double newValue = 0;
-            double aCopy = a;
-            if (a > 1) {
-                while (aCopy >= 10) {
-                    aCopy = aCopy / 10;
-                    newValue++;
-                }
-            }
-            else {
-                while (aCopy < 1) {
-                    aCopy = aCopy * 10;
-                    newValue--;
-                }
-            }
-
-            while (abs(newValue - result) > precision) {
-                result = newValue;
-                double almostA = pow(10, newValue);
-                newValue += (a - almostA) / (a * 10);
-            }
+            return log10(a);
         }
-        return result;
     }
 
     /**
@@ -125,27 +95,14 @@ public:
     * @returns power
     */
     static double ln(const double a) {
-        double result = 0;
         if (a <= 0) {
             throw std::invalid_argument("mathlib::Function.ln: Argument must be greater then zero");
         }
         else {
-            double x = a - 1;
-            double newValue = x;
-            double addend = x;
-            for (int i = 2; abs(newValue - result) > precision; i++) {
-                result = newValue;
-                addend = addend * x * (-1);
-                newValue = newValue + addend / i;
-            }
-            result = newValue;
+            return log(a);
         }
-        return result;
     }
 };
-
-//Static Variable Initialization
-double Function::precision = 0.000000001;
 
 class Equation {
 public:
