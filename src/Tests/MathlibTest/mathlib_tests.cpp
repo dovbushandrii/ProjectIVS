@@ -140,15 +140,12 @@ TEST_F(MathlibTwoArgs, Sub)
 /*
 * @Author - Adam Haltmar, xhaltm02
 */
-TEST_F(MathlibTwoArgs, Log)
+TEST_F(MathlibOneArg, Lg)
 {
-    EXPECT_EQ(Function::lg(4, 1), 0);
-    EXPECT_EQ(Function::lg(3, 81), 4);
-    EXPECT_EQ(Function::lg(81, 3), 0.25);
-    EXPECT_EQ(Function::lg(3.7, 13.69), 2);
-    EXPECT_EQ(Function::lg(0.25, 8), -1.5);
+    EXPECT_EQ(Function::lg(1), 0);
+    EXPECT_EQ(Function::lg(10), 1);
+    EXPECT_EQ(Function::lg(0.1), -1);
     
-    EXPECT_ANY_THROW(Function::lg(-5, 10));
-    EXPECT_ANY_THROW(Function::lg(1, 4));
-    EXPECT_ANY_THROW(Function::lg(3, -4));
+    EXPECT_ANY_THROW(Function::lg(-5));
+    EXPECT_ANY_THROW(Function::lg(0));
 }
