@@ -13,7 +13,25 @@ public:
 	* @param Base
 	* @returns
 	*/
-	static double StrWithBaseToNum(string numb, int Base);
+    static double StrWithBaseToNum(string numb, int Base)
+    {
+        int c = 0;
+        int number = 0;
+        double result = 0;
+        for (int i = 0; i < numb.length(); i++)
+        {
+            if (numb[i] == ',' || numb[i] == '.')
+                break;
+            c++;
+        }
+        for (int i = 0; i < numb.length(); i++, c--)
+        {
+            if (numb[i] == ',' || numb[i] == '.')
+                continue;
+            result += (numb[i] - '0') * pow(Base, c - 1);
+        }
+        return result;
+    }
 
 	//TODO description, function
 	/**
