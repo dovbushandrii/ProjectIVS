@@ -28,7 +28,11 @@ public:
         {
             if (numb[i] == ',' || numb[i] == '.')
                 continue;
-            result += (numb[i] - '0') * pow(Base, c - 1);
+            else if (numb[i] > '9')
+                number = numb[i] - 55;
+            else
+                number = numb[i] - '0';
+            result += number * pow(Base, c - 1);
         }
         return result;
     }
