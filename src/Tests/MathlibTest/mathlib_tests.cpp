@@ -1,12 +1,18 @@
-
-
-//======== Copyright (c) 2021, FIT VUT Brno, All rights reserved. ============//
-//
-// Purpose:     Test-Driven-Development 
-//
-// $NoKeywords: $ivs_project_2 $mathlib_tests.cpp
-// $Author:     
-// $Date:       $2021-03-25
+//============================================================================//
+/*
+* IVS, Project 2 solution
+* Authors: xhavlo01 xdovbu00 xhaltm02 xkolar80
+* GNU General Public License v3
+*/
+//============================================================================//
+/**
+* @file mathlib_tests.cpp
+* @brief utit tests for the Math library
+* @author Andrii Dovbush, xdovbu00
+* @author Anton Havlovskyi, xhavlo01
+* @author Ondřej Kolařík, xkolar80
+* @author Adam Haltmar, xhaltm02
+*/
 //============================================================================//
 
 #include "gtest/gtest.h"
@@ -14,6 +20,13 @@
 
 
 class MathlibTwoArgs : public ::testing::Test
+{
+protected:
+    virtual void SetUp() {
+    }
+};
+
+class MathlibOneArg : public ::testing::Test
 {
 protected:
     virtual void SetUp() {
@@ -28,7 +41,7 @@ protected:
 };
 
 /*
-* @Author - Andrii Dovbush, xdovbu00
+* @author - Andrii Dovbush, xdovbu00
 */
 TEST_F(MathlibTwoArgs, Div) {
     EXPECT_ANY_THROW(Function::div(1, 0));
@@ -42,7 +55,7 @@ TEST_F(MathlibTwoArgs, Div) {
 }
 
 /*
-* @Author - Andrii Dovbush, xdovbu00
+* @author - Andrii Dovbush, xdovbu00
 */
 TEST_F(MathlibTwoArgs, Pow) {
     EXPECT_EQ(Function::power(5, 0), 1);
@@ -60,7 +73,7 @@ TEST_F(MathlibTwoArgs, Pow) {
 }
 
 /*
-* @Author - Anton Havlovskyi, xhavlo01
+* @author - Anton Havlovskyi, xhavlo01
 */
 TEST_F(MathlibTwoArgs, Mul) {
     EXPECT_EQ(Function::mul(2, 2), 4);
@@ -79,7 +92,7 @@ TEST_F(MathlibTwoArgs, Mul) {
 }
 
 /*
-* @Author - Anton Havlovskyi, xhavlo01
+* @author - Anton Havlovskyi, xhavlo01
 */
 TEST_F(MathlibTwoArgs, Root) {
     EXPECT_EQ(Function::root(4, 2), 2);
@@ -97,7 +110,7 @@ TEST_F(MathlibTwoArgs, Root) {
 }
 
 /*
-* @Author - Anton Havlovskyi, xhavlo01
+* aAuthor - Anton Havlovskyi, xhavlo01
 */
 TEST_F(EquationTest, EquationClassTest) {
     EXPECT_EQ(Equation::solveEquation("2+2"), 4);
@@ -111,7 +124,7 @@ TEST_F(EquationTest, EquationClassTest) {
     EXPECT_ANY_THROW(Equation::solveEquation("(2+2)*(3+1) - 6^2 + 64^(1/3)*sqrt(-25)"));
 }
 /*
-* @Author - Ondřej Kolařík, xkolar80
+* @author - Ondřej Kolařík, xkolar80
 */
 TEST_F(MathlibTwoArgs, Add)
 {
@@ -127,7 +140,7 @@ TEST_F(MathlibTwoArgs, Add)
 }
 
 /*
-* @Author - Adam Haltmar, xhaltm02
+* @author - Adam Haltmar, xhaltm02
 */
 TEST_F(MathlibTwoArgs, Sub)
 {
@@ -138,7 +151,7 @@ TEST_F(MathlibTwoArgs, Sub)
 }
 
 /*
-* @Author - Adam Haltmar, xhaltm02
+* @author - Adam Haltmar, xhaltm02
 */
 TEST_F(MathlibOneArg, Lg)
 {
