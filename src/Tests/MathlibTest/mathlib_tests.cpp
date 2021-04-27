@@ -1,4 +1,4 @@
-//============================================================================//
+﻿//============================================================================//
 /*
 * IVS, Project 2 solution
 * Authors: xhavlo01 xdovbu00 xhaltm02 xkolar80
@@ -120,8 +120,8 @@ TEST_F(EquationTest, EquationClassTest) {
     EXPECT_EQ(Equation::solveEquation("2/2"), 1);
     EXPECT_EQ(Equation::solveEquation("2-2"), 0);
 
-    EXPECT_EQ(Equation::solveEquation("(2+2)*(3+1) - 6^2 + 64^(1/3)*sqrt(25)"), 20);
-    EXPECT_ANY_THROW(Equation::solveEquation("(2+2)*(3+1) - 6^2 + 64^(1/3)*sqrt(-25)"));
+    EXPECT_EQ(Equation::solveEquation("(2+2)*(3+1) - 6^2 + 64^(1/3)*rt((25),(2))"), 20);
+    EXPECT_ANY_THROW(Equation::solveEquation("(2+2)*(3+1) - 6^2 + 64^(1/3)*rt((-25),(2))"));
 }
 /*
 * @author - Ondřej Kolařík, xkolar80
