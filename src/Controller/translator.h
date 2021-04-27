@@ -21,8 +21,6 @@
 
 #include <string>
 
-using namespace std;
-
 class Translator {
 private:
 
@@ -33,7 +31,7 @@ private:
     * @param Base base of numeric system
     * @returns true if number is writen correctly
     */
-    static bool checkOnErrors(string numb, int base) {
+    static bool checkOnErrors(std::string numb, int base) {
         if (base < 2 || base > 16) {
             throw std::exception("Translator::checksOnErrors: Inappropriate base value");
         }
@@ -51,10 +49,11 @@ private:
             else {
                 for (size_t i = 0; i < numb.size(); i++) {
                     bool cond1 = (numb[i] >= '0' && numb[i] <= '9');
-                    bool cond1Plus = (numb[i] >= 'A' && numb[i] < base - 10 + 'A');
+                    cond1 = cond1 || (numb[i] >= 'A' && numb[i] < base - 10 + 'A');
+                    cond1 = cond1 || (numb[i] >= 'a' && numb[i] < base - 10 + 'a');
                     bool cond2 = numb[i] == '.' || numb[i] == ',';
                     bool cond3 = numb[i] == '-';
-                    if (!(cond1 || cond1Plus || cond2 || cond3)) {
+                    if (!(cond1 || cond2 || cond3)) {
                         return false;
                     }
                 }
@@ -63,14 +62,15 @@ private:
         }
     }
 
+public:
     /**
     * @brief Deletes spaces in the line
     * @author Andrii Dovbush xdovbu00
     * @param line line
     * @returns line without spaces
     */
-    static string deleteSpaces(string line) {
-        string result = "";
+    static std::string deleteSpaces(std::string line) {
+        std::string result = "";
         for (size_t i = 0; i < line.size(); i++) {
             if (!isspace(line[i])) {
                 result += line[i];
@@ -79,8 +79,6 @@ private:
         return result;
     }
 
-public:
-
     /**
     * @brief Converts number in base 2...16 to decimal number
     * @author Anton Havlovsky xhavlo01
@@ -88,7 +86,7 @@ public:
     * @param Base base of numeric system
     * @returns decimal equivalent
     */
-    static double StrWithBaseToNum(string numb, int Base)
+    static double StrWithBaseToNum(std::string numb, int Base)
     {
         int c = 0;
         int number = 0;
@@ -117,13 +115,16 @@ public:
                 if (numb[i] == ',' || numb[i] == '.') {
                     i++;
                 }
-                if (numb[i] > '9') {
-                    number = numb[i] - 55;
+                if (numb[i] >= 'a') {
+                    number = (numb[i] - 'a') + 10;
+                }
+                else if (numb[i] >= 'A') {
+                    number = (numb[i] - 'A') + 10;
                 }
                 else {
                     number = numb[i] - '0';
                 }
-                result += number * pow(Base, (c - 1));
+                result += number * pow(Base, (double)(c - 1));
             }
             return result * sign;
         }
@@ -139,13 +140,13 @@ public:
     * @param Base base of numeric system
     * @returns string with converted number
     */
-    static string NumToStrWithBase(double numb, int Base) {
+    static std::string NumToStrWithBase(double numb, int Base) {
 
         unsigned precision = 8;
 
         if (Base > 1 && Base < 17) {
-            string result = "";
-            int intPart = floor(abs(numb));
+            std::string result = "";
+            int intPart = (int)floor(abs(numb));
             double fracPart = abs(numb) - intPart;
 
             //Dealing with integer part
@@ -169,9 +170,9 @@ public:
             if (fracPart > 0) {
                 result += '.';
             }
-            for (int i = 0; i < precision && fracPart > 0; i++) {
+            for (unsigned i = 0; i < precision && fracPart > 0; i++) {
                 fracPart *= Base;
-                char integ = floor(fracPart);
+                char integ = (char)floor(fracPart);
                 fracPart -= (double)integ;
                 if (integ < 10) {
                     result += integ + '0';
