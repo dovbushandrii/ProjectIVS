@@ -1,10 +1,18 @@
-//======== Copyright (c) 2021, FIT VUT Brno, All rights reserved. ============//
-//
-// Purpose:     Test-Driven-Development 
-//
-// $NoKeywords: $ivs_project_2 $translator_tests.cpp
-// $Author:     
-// $Date:       $2021-03-26
+﻿//============================================================================//
+/*
+* IVS, Project 2 solution
+* Authors: xhavlo01 xdovbu00 xhaltm02 xkolar80
+* GNU General Public License v3
+*/
+//============================================================================//
+/**
+* @file translator_tests.cpp
+* @brief utit tests for the Translator class
+* @author Andrii Dovbush, xdovbu00
+* @author Anton Havlovskyi, xhavlo01
+* @author Ondřej Kolařík, xkolar80
+* @author Adam Haltmar, xhaltm02
+*/
 //============================================================================//
 
 #include "gtest/gtest.h"

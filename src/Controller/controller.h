@@ -1,52 +1,24 @@
-#include <string>
+﻿//============================================================================//
+/*
+* IVS, Project 2 solution
+* Authors: xhavlo01 xdovbu00 xhaltm02 xkolar80
+* GNU General Public License v3
+*/
+//============================================================================//
+/**
+* @file controller.h
+* @brief UI controler
+* @author Andrii Dovbush, xdovbu00
+* @author Anton Havlovskyi, xhavlo01
+* @author Ondřej Kolařík, xkolar80
+* @author Adam Haltmar, xhaltm02
+*/
+//============================================================================//
 
-using namespace std;
+#ifndef __CONTROLLER_H__
 
-class Translator {
-public:
-	//TODO description, function
-	/**
-	*  Converts number in base 0...16 to decimal number
-	* @brief
-	* @author
-	* @param numb
-	* @param Base
-	* @returns
-	*/
-    static double StrWithBaseToNum(string numb, int Base)
-    {
-        int c = 0;
-        int number = 0;
-        double result = 0;
-        for (int i = 0; i < numb.length(); i++)
-        {
-            if (numb[i] == ',' || numb[i] == '.')
-                break;
-            c++;
-        }
-        for (int i = 0; i < numb.length(); i++, c--)
-        {
-            if (numb[i] == ',' || numb[i] == '.')
-                continue;
-            else if (numb[i] > '9')
-                number = numb[i] - 55;
-            else
-                number = numb[i] - '0';
-            result += number * pow(Base, c - 1);
-        }
-        return result;
-    }
-
-	//TODO description, function
-	/**
-	*  Converts decimal number to number in base 0...16
-	* @brief
-	* @author
-	* @param numb
-	* @param Base
-	* @returns
-	*/
-	static string NumToStrWithBase(double numb, int Base);
-};
+#define __CONTROLLER_H__
 
 class Controller {};
+
+#endif // ! __CONTROLLER_H__
