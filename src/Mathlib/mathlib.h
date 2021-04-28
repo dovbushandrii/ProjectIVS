@@ -23,8 +23,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
-//#include "../Controller/translator.h"
-#include "translator.h"
+#include "../Controller/translator.h"
 
 class Function {
 public:
