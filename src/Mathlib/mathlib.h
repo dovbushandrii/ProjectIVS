@@ -108,6 +108,27 @@ public:
     }
 
     /**
+   *  floor(a)!
+   * Finds factorial of floor(a)
+   * @brief Factorial func
+   * @author Andrii Dovbush
+   * @param a number
+   * @returns factorial of given number
+   */
+    static double fact(const double a) {
+        if (a < 0) {
+            throw std::invalid_argument("mathlib::Function.fact: Argument must be greater then or equal to zero");
+        }
+        int numb = (int)floor(a);
+        int result = 1;
+        while (numb > 1) {
+            result *= numb;
+            numb--;
+        }
+        return result;
+    }
+
+    /**
     * @brief Common logarithm ( lg(a) )
     * @author Andrii Dovbush xdovbu00
     * @param a argument that should be greater then 0
@@ -158,12 +179,12 @@ private:
     }
 
     static bool operation(char c) {
-        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'l' || c == 's';
+        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'l' || c == 's' || c == 'f';
     }
 
     static int priority(char op) {
         if (op < 0) {
-            if (-op == 'l' || -op == 'L' || -op == 's') return 5;
+            if (-op == 'l' || -op == 'L' || -op == 's' || -op == 'f') return 5;
             else return 3;
         }
         else {
@@ -189,6 +210,9 @@ private:
             }
             else if (-op == 's') {
                 value.push_back(Function::sqrt(unitar));
+            }
+            else if (-op == 'f') {
+                value.push_back(Function::fact(unitar));
             }
         }
         else {                              
@@ -219,7 +243,7 @@ private:
         bool unary = true;        
         std::vector<double>value;      
         std::vector<char>op;          
-        for (int i = 0; i < equation.size(); i++) {
+        for (size_t i = 0; i < equation.size(); i++) {
             if (equation[i] == '(') {
                 op.push_back('(');
                 unary = true;
@@ -242,6 +266,9 @@ private:
                 }
                 if (zn == 's') {
                     i+=3;
+                }
+                if (zn == 'f') {
+                    i += 3;
                 }
                 if (unary == true)zn = -zn; 
                 while (!op.empty() && priority(op.back()) >= priority(zn)) {
@@ -279,6 +306,7 @@ public:
     * sqrt(a) -> a^(1/2)
     * lg(a)   -> log10(a)
     * ln(a)   -> logE(a)
+    * fact(a) -> floor(a)!
     * @brief Solves equation writen in std:string format
     * @author Andrii Dovbush xdovbu00
     * @param equation equation writen in string format
@@ -299,6 +327,7 @@ public:
     * sqrt(a) -> a^(1/2)
     * lg(a)   -> log10(a)
     * ln(a)   -> logE(a)
+    * fact(a) -> floor(a)!
     * Numeric base: 10
     * @brief Solves equation writen in std:string format
     * @author Andrii Dovbush xdovbu00
