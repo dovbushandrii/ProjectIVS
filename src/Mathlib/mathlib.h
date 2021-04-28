@@ -179,12 +179,13 @@ private:
     }
 
     static bool operation(char c) {
-        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'l' || c == 's' || c == 'f';
+        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'l' || c == 's' || c == '!';
     }
 
     static int priority(char op) {
         if (op < 0) {
-            if (-op == 'l' || -op == 'L' || -op == 's' || -op == 'f') return 5;
+            if (-op == 'l' || -op == 'L' || -op == 's') return 6;
+            if (-op == '!') return 5;
             else return 3;
         }
         else {
@@ -211,7 +212,7 @@ private:
             else if (-op == 's') {
                 value.push_back(Function::sqrt(unitar));
             }
-            else if (-op == 'f') {
+            else if (-op == '!') {
                 value.push_back(Function::fact(unitar));
             }
         }
@@ -258,25 +259,30 @@ private:
             }
             else if (operation(equation[i])) {
                 char zn = equation[i];
-                if (zn == 'l') {
+                if (zn == '!') {
+                    unary = true;
+                }
+                else if (zn == 'l') {
                     i++;
                     if (equation[i] == 'g') {
                         zn = 'L';
                     }
                 }
-                if (zn == 's') {
-                    i+=3;
-                }
-                if (zn == 'f') {
+                else if (zn == 's') {
                     i += 3;
                 }
-                if (unary == true)zn = -zn; 
+                if (unary == true)zn = -zn;
                 while (!op.empty() && priority(op.back()) >= priority(zn)) {
-                    action(value, op.back());  
-                    op.pop_back();            
+                    action(value, op.back());
+                    op.pop_back();
                 }
                 op.push_back(zn);
-                unary = true;
+                if (-zn != '!') {
+                    unary = true;
+                }
+                else {
+                    unary = false;
+                }
             }
             else {
                 std::string number;      
@@ -306,7 +312,7 @@ public:
     * sqrt(a) -> a^(1/2)
     * lg(a)   -> log10(a)
     * ln(a)   -> logE(a)
-    * fact(a) -> floor(a)!
+    * a! -> floor(a)!
     * @brief Solves equation writen in std:string format
     * @author Andrii Dovbush xdovbu00
     * @param equation equation writen in string format
@@ -327,7 +333,7 @@ public:
     * sqrt(a) -> a^(1/2)
     * lg(a)   -> log10(a)
     * ln(a)   -> logE(a)
-    * fact(a) -> floor(a)!
+    * a! -> floor(a)!
     * Numeric base: 10
     * @brief Solves equation writen in std:string format
     * @author Andrii Dovbush xdovbu00
