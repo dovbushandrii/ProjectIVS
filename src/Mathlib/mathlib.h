@@ -23,7 +23,8 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
-#include "../Controller/translator.h"
+//#include "../Controller/translator.h"
+#include "translator.h"
 
 class Function {
 public:
@@ -96,6 +97,17 @@ public:
     }
 
     /**
+    *  a^(1/2)
+    * @brief Square root function
+    * @author Andrii Dovbush
+    * @param a rooted
+    * @returns root from a by b base
+    */
+    static double sqrt(const double a) {
+        return pow(a, 0.5);
+    }
+
+    /**
     * @brief Common logarithm ( lg(a) )
     * @author Andrii Dovbush xdovbu00
     * @param a argument that should be greater then 0
@@ -146,42 +158,12 @@ private:
     }
 
     static bool operation(char c) {
-        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'l';
-    }
-
-    static std::string swapRootToPow(std::string equation) {
-        size_t index;
-        while ((index = equation.find("rt")) != std::string::npos) {
-            size_t startLeft = index + 3;
-            size_t endLeft = startLeft;
-            unsigned level = 0;
-            while (1) {
-                if (equation[endLeft] == '(') level++;
-                else if (equation[endLeft] == ')') level--;
-                if (equation[endLeft + 1] == ';' && !level) break;
-                endLeft++;
-            }
-            size_t startRight = endLeft + 2;
-            size_t endRight = startRight;
-            level = 0;
-            while (1) {
-                if (equation[endRight] == '(') level++;
-                else if (equation[endRight] == ')') level--;
-                if (equation[endRight + 1] == ')' && !level) break;
-                endRight++;
-            }
-            
-            std::string base = equation.substr(startLeft, endLeft - startLeft + 1);
-            std::string pow = equation.substr(startRight, endRight - startRight + 1);
-            equation.erase(index, endRight + 1 - index);
-            equation.insert(index, base + "^(1/(" + pow + ")");
-        }
-        return equation;
+        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'l' || c == 's';
     }
 
     static int priority(char op) {
         if (op < 0) {
-            if (-op == 'l' || -op == 'L') return 5;
+            if (-op == 'l' || -op == 'L' || -op == 's') return 5;
             else return 3;
         }
         else {
@@ -204,6 +186,9 @@ private:
             }
             else if (-op == 'L') {
                 value.push_back(Function::lg(unitar));
+            }
+            else if (-op == 's') {
+                value.push_back(Function::sqrt(unitar));
             }
         }
         else {                              
@@ -231,7 +216,6 @@ private:
 
     static double calculus(std::string equation, const int base) {
         equation = Translator::deleteSpaces(equation);
-        equation = swapRootToPow(equation);
         bool unary = true;        
         std::vector<double>value;      
         std::vector<char>op;          
@@ -255,6 +239,9 @@ private:
                     if (equation[i] == 'g') {
                         zn = 'L';
                     }
+                }
+                if (zn == 's') {
+                    i+=3;
                 }
                 if (unary == true)zn = -zn; 
                 while (!op.empty() && priority(op.back()) >= priority(zn)) {
@@ -289,7 +276,7 @@ public:
     * a / b
     * a * b
     * a ^ b
-    * rt(a;b) -> root a^(1/b)
+    * sqrt(a) -> a^(1/2)
     * lg(a)   -> log10(a)
     * ln(a)   -> logE(a)
     * @brief Solves equation writen in std:string format
@@ -309,7 +296,7 @@ public:
     * a / b
     * a * b
     * a ^ b
-    * rt(a;b) -> root a^(1/b)
+    * sqrt(a) -> a^(1/2)
     * lg(a)   -> log10(a)
     * ln(a)   -> logE(a)
     * Numeric base: 10
