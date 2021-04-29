@@ -20,6 +20,7 @@
 #define __TRANSLATOR_H__
 
 #include <string>
+#include <exception>
 
 class Translator {
 private:
@@ -172,7 +173,13 @@ public:
             }
             for (unsigned i = 0; i < precision && fracPart > 0; i++) {
                 fracPart *= Base;
-                char integ = (char)floor(fracPart);
+                char integ;
+                if (abs(round(fracPart) - fracPart) > 0.00000001) {
+                    integ = (char)floor(fracPart);
+                }
+                else {
+                    integ = (char)round(fracPart);
+                }
                 fracPart -= (double)integ;
                 if (integ < 10) {
                     result += integ + '0';
