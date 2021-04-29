@@ -1,1 +1,102 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+Plan Deadlines and reality:
+----------
+
+
+21. 3. 2021 (for all of us): -> Reality: 21. 3. 2021
+Install:
+-- MS VS		(src: https://visualstudio.microsoft.com/cs/)
+-- Git 			(src: https://git-scm.com/)
+-- Qt(Open source)	(src: https://www.qt.io/download)
+Finish tutorials:
+-- Git tutorial 	(src: https://www.youtube.com/watch?v=3RjQznt-8kE&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR)
+
+26. 3. 2021: -> Reality: 14. 4. 2021
+Finish:
+-- GTest on:
+	-- Mathlib: +,*,:,/,POW,ROOT,LN:
+		static double Function::add(double a, double b){}
+		static double Function::sub(double a, double b){}
+		static double Function::mul(double a, double b){}
+		static double Function::div(double a, double b){}
+		static double Function::pow(double a, double(int) b){}
+		static double Function::root(double a, double(int) b){}
+		static double Function::lg(double a){}
+		static double Function::ln(double a){}
+		static double Equation::solveEquation(string equation){}
+	-- Controller part:
+		static double Translator::StrWithBaseToNum(string numb, int Base){} 
+		static string Translator::NumToStrWithBase (double numb, int Base){}
+		
+
+30. 3. 2021: -> Reality: 14. 4. 2021
+Finish:
+-- Mathlib: +,*,:,/,POW,ROOT,LN:
+	static double Function::add(double a, double b){}
+	static double Function::sub(double a, double b){}
+	static double Function::mul(double a, double b){}
+	static double Function::div(double a, double b){}
+	static double Function::pow(double a, double(int) b){}
+	static double Function::root(double a, double(int) b){}
+	static double Function::lg(double a){}
+	static double Function::ln(double a){}
+
+4. 4. 2021: -> Reality: 26. 4. 2021
+Finish:
+-- Controller part:
+	class Controller{} -> Reality: haven`t done because of useless
+	static double Translator::StrWithBaseToNum(string numb, int Base){} 
+	static string Translator::NumToStrWithBase (double numb, int Base){}
+	static double Equation::solveEquation(string equation){}
+
+Finish tutorials(for all of us): -> Reality: 10. 4. 2021
+-- Qt:
+	Tutorial 1 	(src: https://www.youtube.com/watch?v=I96uPDifZ1w&list=PLGLfVvz_LVvQrqLpBB4Sfz7gxMN9shP6v)
+	OR
+	Tutorial 2 	(src: https://www.youtube.com/watch?v=EkjaiDsiM-Q&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA)
+-- Qt docs 		(src: https://doc.qt.io/)
+	
+
+15. 4. 2021: -> Reality: 29. 4. 2021
+Finish:
+-- View:
+	--UI:
+		Keyboard
+		Enter Display
+		Result Display
+		ToolBar
+	
+17. 4. 2021: -> Reality: 29. 4. 2021
+--Manual testing:
+	switch numeric system base (2-16) in UI
+
+22. 4. 2021: -> Reality: 29. 4. 2021
+Finish:
+-- CMake file
+-- Installer for Windows 64x
+-- Deinstaller for Windows 64x
+
+23. 4. 2021 (for all of us): -> Reality: 29. 4. 2021
+--Manual testing:
+	Installer for Windows 64x
+	Deinstaller for Windows 64x
+
+25. 4. 2021: -> Reality: 29. 4. 2021
+Finish:
+-- User manual in application
+
+28. 4. 2021: -> Reality: 29. 4. 2021
+Finish:
+--Doxygen
+--Documentation
+
+
+29. 4. 2021: -> Reality: 30. 4. 2021 
+Submit archive with:
+-- repository
+-- installer
+-- documentation
+
+
+
+
+
