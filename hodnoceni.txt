@@ -1,4 +1,4 @@
 ﻿xdovbu00 170(pokročilé mat. operace a základní mat. operace, XML-file pro GUI, profiling, Doxyfile,Mockup)
-xhavlo01 170 (pokročilé mat. operace a GUI,instalator)
+xhavlo01 170 (pokročilé mat. operace a GUI,instalator, User manual)
 xhaltm02 30 (testy)
 xkolar80 30 (testy)
