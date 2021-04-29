@@ -25,6 +25,9 @@
 #include <vector>
 #include "../Controller/translator.h"
 
+/**
+* Class that implements math functions.
+*/
 class Function {
 public:
     /**
@@ -158,9 +161,19 @@ public:
     }
 };
 
+/**
+* Class that can solve equations
+* written in the std::format
+*/
 class Equation {
 private:
-
+    /**
+    * @brief Checks if the symbol is digit for specific numeric system
+    * @author Andrii Dovbush xdovbu00
+    * @param symb given symbol
+    * @param base base on num. system
+    * @return true, if symbol is digit
+    */
     static bool isDigit(char symb, const int base) {
         bool cond1 = symb >= '0';
         bool cond2 = symb == '.' || symb == ',';
@@ -177,10 +190,44 @@ private:
         return true;
     }
 
+    /**
+    * Symbols and operations:
+    * + -> addition
+    * - -> substraction
+    * * -> multiplication
+    * / -> division
+    * ^ -> power
+    * l -> lg or ln
+    * s -> sqrt
+    * ! -> factorial
+    * @brief Checks if the symbol is operation symbol
+    * @author Andrii Dovbush xdovbu00
+    * @param c symbol to check
+    * @return true, if symbol stands for operation
+    */
     static bool operation(char c) {
         return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'l' || c == 's' || c == '!';
     }
 
+    /**
+    * if op < 0 -> unitary operation
+    * Priorities and operations:
+    * + -> 1
+    * - -> 1
+    * * -> 2
+    * / -> 2
+    * -(as unitary op) -> 3
+    * ^ -> 4
+    * ! -> 5
+    * lg -> 6
+    * ln -> 6
+    * sqrt -> 6
+    * Not an operation symbol -> -1
+    * @brief Returns priority for operation
+    * @author Andrii Dovbush xdovbu00
+    * @param op operation symbol
+    * @return priority of operation
+    */
     static int priority(char op) {
         if (op < 0) {
             if (-op == 'l' || -op == 'L' || -op == 's') return 6;
@@ -195,6 +242,12 @@ private:
         }
     }
 
+    /**
+    * @brief Applies operation to the values stack
+    * @author Andrii Dovbush xdovbu00
+    * @param value stack of values
+    * @param op operation symbol
+    */
     static void action(std::vector<double>& value, char op) {
         if (op < 0) {                            
             double unitar = value.back();
@@ -238,6 +291,13 @@ private:
         }
     }
 
+    /**
+    * @brief Calculates equation written in the std::string format
+    * @author Andrii Dovbush xdovbu00
+    * @param equation equation written in the std::string format
+    * @param base base of numeric system
+    * @return calculated value
+    */
     static double calculus(std::string equation, const int base) {
         equation = Translator::deleteSpaces(equation);
         bool unary = true;        
@@ -312,9 +372,9 @@ public:
     * lg(a)   -> log10(a)
     * ln(a)   -> logE(a)
     * a! -> floor(a)!
-    * @brief Solves equation writen in std:string format
+    * @brief Solves equation written in std:string format
     * @author Andrii Dovbush xdovbu00
-    * @param equation equation writen in string format
+    * @param equation equation written in string format
     * @param base numerical base
     * @returns calculated result
     */
@@ -334,9 +394,9 @@ public:
     * ln(a)   -> logE(a)
     * a! -> floor(a)!
     * Numeric base: 10
-    * @brief Solves equation writen in std:string format
+    * @brief Solves equation written in std:string format
     * @author Andrii Dovbush xdovbu00
-    * @param equation equation writen in string format
+    * @param equation equation written in string format
     * @returns calculated result
     */
     static double solveEquation(std::string equation) {
