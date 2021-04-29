@@ -48,10 +48,19 @@ TEST_F(TranslatorTest, StrToDouble) {
     EXPECT_ANY_THROW(Translator::StrWithBaseToNum("0", 1));
     EXPECT_ANY_THROW(Translator::StrWithBaseToNum("1B1", 17));
 
-    //TODO: FRACTION TESTS
     EXPECT_EQ(Translator::StrWithBaseToNum("10.01", 2), 2.25);
 }
 
 /*
 * @Author - Anton Havlovskyi, xhavlo01
 */
+TEST_F(TranslatorTest, DoubleToStr) {
+    EXPECT_EQ(Translator::NumToStrWithBase(10, 10), "10");
+    EXPECT_EQ(Translator::NumToStrWithBase(5, 3), "12");
+    EXPECT_EQ(Translator::NumToStrWithBase(15, 16), "F");
+   
+    EXPECT_EQ(Translator::NumToStrWithBase(-5, 3), "-12");
+
+    EXPECT_EQ(Translator::NumToStrWithBase(5.5, 2), "101.1");
+    EXPECT_EQ(Translator::NumToStrWithBase(1.25, 4), "1.1");
+}
