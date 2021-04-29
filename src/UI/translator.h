@@ -24,6 +24,7 @@
 
 class Translator {
 private:
+
     /*
     * @brief Checks number correctness due to numeric base
     * @author Andrii Dovbush xdovbu00
